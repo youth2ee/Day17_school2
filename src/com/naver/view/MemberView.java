@@ -4,13 +4,13 @@ import com.naver.member.MemberDTO;
 
 public class MemberView {
 	public void view(MemberDTO memberDTO) {
-		System.out.println(memberDTO.getKind());
-		System.out.println(memberDTO.getId());
-		System.out.println(memberDTO.getPw());
-		System.out.println(memberDTO.getName());
-		System.out.println(memberDTO.getEmail());
-		System.out.println(memberDTO.getPhone());
-		System.out.println(memberDTO.getBid());
+		System.out.println("kind : "+memberDTO.getKind());
+		System.out.println("id : "+memberDTO.getId());
+		System.out.println("pw : "+memberDTO.getPw());
+		System.out.println("name : "+memberDTO.getName());
+		System.out.println("email : "+memberDTO.getEmail());
+		System.out.println("phone : "+memberDTO.getPhone());
+		System.out.println("bid : "+memberDTO.getBid());
 	}
 
 }

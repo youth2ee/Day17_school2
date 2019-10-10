@@ -24,7 +24,7 @@ public class PointController {
 		int term =0;
 
 		while(check) {
-			System.out.println("관리자모드");
+			System.out.println("*관리자모드*");
 			System.out.println("1. 성적조회");
 			System.out.println("2. 성적입력");
 			System.out.println("3. 성적수정");

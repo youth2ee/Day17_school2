@@ -39,6 +39,9 @@ insert into POINT values (point_seq.nextval,'stu2',70,70,70,210,70,2,'b')
 insert into POINT values (point_seq.nextval,'stu3',60,60,60,180,60,2,'c')
 
 
+d table point
+
+
 create table member(
 kind number(1) not null,
 id varchar2(400) constraint member_id_PK primary key,
@@ -49,8 +52,37 @@ phone varchar2(400) constraint member_phone_U UNIQUE,
 bid varchar2(400) constraint member_bid_FK references ban (bid)
 )
 
+insert into ban values
 insert into point values (point_seq.nextval,?,?,?,?,?,?,?,(select bid from member where id=?))
 update point set kor=?, eng=?, math=?, total=?, avg=?, term=?, bid=? where id=?
 
 update point set kor=60, eng=60, math=60, total=180, avg=60 where id='sys2' and term=2
 update point set kor=60 where id='stu2' and term=2
+
+create table account(
+num number(8) not null,
+Aid varchar2(400) constraint account_aid_FK references member (aid),
+accountNum number(14) constraint account_accountNum_FK references bank (accountNum)
+accountDate date not null ,
+inputD number(10,2),
+outputD number(10,2),
+totalM number(10,2) not null
+)
+
+create table amember(
+aid varchar2(400) constraint amember_aid_PK primary key,
+apw varchar2(400) not null,
+aname varchar2(400) not null,
+aemail varchar2(400) not null unique,
+aphone varchar2(400) not null unique,
+)
+
+create table bank(
+aid varchar2(400) constraint bank_aid_FK references amember (aid),
+accountNum number(14) constraint bank_accountNum_PK primary key,
+makeDate date not null
+)
+
+
+
+

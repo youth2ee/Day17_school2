@@ -13,7 +13,6 @@ public class SchoolController {
 	private Scanner sc;
 	private MemberDAO memberDAO;
 	private MemberView memberView;
-	private MemberController memberController;
 	private PointDAO pointDAO;
 	private PointView pointView;
 	private PointController pointController;
@@ -22,7 +21,6 @@ public class SchoolController {
 		sc = new Scanner(System.in);
 		memberDAO = new MemberDAO();
 		memberView = new MemberView();
-		memberController = new MemberController();
 		pointDAO = new PointDAO();
 		pointView = new PointView();
 		pointController = new PointController();
@@ -51,8 +49,9 @@ public class SchoolController {
 			//권한에 따라 관리자와 학생 나누기
 			switch (num) {
 			case 1: //관리자
-				System.out.println("1. 회원정보");
-				System.out.println("2. 성적관리");
+				System.out.println("1. 관리자 회원정보");
+				System.out.println("2. 관리자 성적관리");
+				System.out.println("3. 종료");
 				result = sc.nextInt();
 
 				switch(result) {
@@ -69,8 +68,9 @@ public class SchoolController {
 				break;
 
 			case 2: //학생 
-				System.out.println("1. 회원정보");
-				System.out.println("2. 성적관리");
+				System.out.println("1. 학생 회원정보");
+				System.out.println("2. 학생 성적관리");
+				System.out.println("3. 종료");
 				result = sc.nextInt();
 				
 				switch(result) {
